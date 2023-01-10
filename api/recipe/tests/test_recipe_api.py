@@ -333,7 +333,10 @@ class PrivateRecipeAPITests(TestCase):
 
     def test_create_recipe_with_existing_ingredients(self):
         """ Test creating a recipe with existing ingredients. """
-        ingredient_honey = Ingredient.objects.create(user=self.user, name='Honey')
+        ingredient_honey = Ingredient.objects.create(
+            user=self.user,
+            name='Honey'
+        )
         payload = {
             'title': 'Cake',
             'time_minutes': 40,
@@ -367,7 +370,10 @@ class PrivateRecipeAPITests(TestCase):
         res = self.client.patch(url, payload, format='json')
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
-        new_ingredient = Ingredient.objects.get(user=self.user, name='Strawberry')
+        new_ingredient = Ingredient.objects.get(
+            user=self.user,
+            name='Strawberry',
+        )
         self.assertIn(new_ingredient, recipe.ingredients.all())
 
     def test_update_recipe_assign_ingredient(self):
