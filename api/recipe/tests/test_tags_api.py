@@ -115,8 +115,8 @@ class PrivateTagsApiTests(TestCase):
             price=Decimal(5.5),
         )
         recipe.tags.add(tag1)
-        s1 = IngredientSerializer(tag1)
-        s2 = IngredientSerializer(tag2)
+        s1 = TagSerializer(tag1)
+        s2 = TagSerializer(tag2)
 
         params = {'assigned_only': 1}
         res = self.client.get(TAGS_URL, params)
@@ -141,8 +141,8 @@ class PrivateTagsApiTests(TestCase):
             price=Decimal('10.5'),
             user=self.user,
         )
-        recipe1.ingredients.add(tag)
-        recipe2.ingredients.add(tag)
+        recipe1.tags.add(tag)
+        recipe2.tags.add(tag)
 
         params = {'assigned_only': 1}
         res = self.client.get(TAGS_URL, params)
