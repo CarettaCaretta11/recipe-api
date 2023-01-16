@@ -416,7 +416,7 @@ class PrivateRecipeAPITests(TestCase):
     def test_filter_by_tags(self):
         """ Test filtering recipes by tags. """
         r1 = create_recipe(user=self.user, title='Adana Kebab')
-        r2 = create_recipe(user=self.user, title='Shaurma')
+        r2 = create_recipe(user=self.user, title='Shawarma')
         tag1 = Tag.objects.create(user=self.user, name='Turkish')
         tag2 = Tag.objects.create(user=self.user, name='Arabian')
         r1.tags.add(tag1)
