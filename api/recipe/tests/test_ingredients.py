@@ -15,10 +15,7 @@ from core.models import (
     Recipe,
 )
 
-from recipe.serializers import (
-    IngredientSerializer,
-    RecipeSerializer,
-)
+from recipe.serializers import IngredientSerializer
 
 
 INGREDIENTS_URL = reverse('recipe:ingredient-list')
