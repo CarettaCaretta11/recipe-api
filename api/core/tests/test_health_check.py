@@ -13,7 +13,7 @@ class HealthCheckTests(TestCase):
 
     def test_health_check(self):
         """ Test health check API. """
-        client = APIClient()
+        self.client = APIClient()
         url = reverse('health-check')
         res = self.client.get(url)
 
