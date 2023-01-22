@@ -1,6 +1,6 @@
 # Recipe API
 
-This is a REST API for working with recipes. It implements the CRUD functionalities, as well as some additional features, such as image upload and filtering.
+This is a REST API for working with recipes. It implements the CRUD functionalities, as well as some additional features, such as image upload and filtering. Token-based authentication system is used to validate private requests.
 
 ## Install
     git clone https://github.com/CarettaCaretta11/recipe-api.git
